@@ -17,4 +17,4 @@ deploy:
   on:
     repo: Daniela-git/travis-ci-cd
   skip_cleanup: "false"
-  run: "./gradlew run"
+  after_deploy: "./gradlew run"
