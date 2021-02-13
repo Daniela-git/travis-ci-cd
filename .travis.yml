@@ -3,6 +3,7 @@ before_install: chmod +x gradlew
 script:
   - "./gradlew test"
   - "./gradlew build"
+  - "./gradlew run"
 notifications:
   slack:
     - praxisunal:bvBI4R9AV3ajaiuClFS5Rh1y
@@ -16,4 +17,4 @@ deploy:
   on:
     repo: Daniela-git/travis-ci-cd
   skip_cleanup: "false"
-  # run: "./gradlew run"
+  run: "./gradlew run"
