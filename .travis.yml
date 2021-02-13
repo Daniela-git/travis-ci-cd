@@ -3,4 +3,6 @@ before_install: chmod +x gradlew
 script:
   - "./gradlew test"
 notifications:
-  slack: travis-ci-cd:YBBFfGmETdf4Pb0wc1vANTGX
+  slack:
+    room:
+      - travis-ci-cd:YBBFfGmETdf4Pb0wc1vANTGX#test-with-travis
