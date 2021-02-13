@@ -2,5 +2,16 @@ language: java
 before_install: chmod +x gradlew
 script:
   - "./gradlew test"
+  - "./gradlew build"
 notifications:
   slack: praxisunal:bvBI4R9AV3ajaiuClFS5Rh1y
+deploy:
+  provider: heroku
+  api_key:
+    secure: ifyTR3Sv7iDMkW/LEuaYoblMjbQM1FOFb9TRB8eUMGJrg0hWBuGgPWFRCHAiYSC8B/oQ342IV83bvhQDGUGN/iINBS1KYlmEjeHUZmRuB8AwbM8wbrLAuDTdGwRQORP9VNxL6xYJ4V4tywai03uI/Xf4y14fU2Qwzd/x3sEpkPOgKbiPdRAbx9mQlzSrP+SSIdeaNbZ6goxvhtWaIZPo9RELC5TW9N2fqOA3G14OCLZ5YjRhk+jYbaBYZJAUGsTbikxkSU7tvosDGvi6aQyP3TEiJIs7oIRnDvDgSX450+7uLmjTa8QvATUmMDsXBpW5ZdZgNlklWhfUFbevUJUn1J7Cd+dNnsvw11Ya6xXKTsfCG2gomYdr3gQEMQyRTyh6KojIoKIAUGwatJoIa5BUr5TC3sURPKGd0HQoWWHJy+TtUFusEQXQ+Jn3TDSsuNMbyqoVHqdSEHbadRKY9m8wggJQmwHshPVfJsAf3F36jV9Lpvx1Sfi9/Em6VWX1WjdY8Hwg+uLlJY7VRKgcxbzWNEXfcfleXY22yXTLfjcBknNMRunn3fr7MHM91+Prym4/wkk8i9x0mr66my8gHx3Wx6VoInqZWBFCkm4rwwOchdlCeIpYeF45zOmGzXf77ruoGF899nbUAijBMicCMJznkV5h0a96C1oCPs1Su7MMJhk=
+  app: travis-ci-cd
+  on:
+    repo: Daniela-git/travis-ci-cd
+  skip_cleanup: "true"
+  run:
+    - "./gradlew run"
