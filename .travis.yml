@@ -4,7 +4,10 @@ script:
   - "./gradlew test"
   - "./gradlew build"
 notifications:
-  slack: praxisunal:bvBI4R9AV3ajaiuClFS5Rh1y
+  slack:
+    - praxisunal:bvBI4R9AV3ajaiuClFS5Rh1y
+    - on_success: always
+    - on_failure: always
 deploy:
   provider: heroku
   api_key:
@@ -12,6 +15,5 @@ deploy:
   app: travis-ci-cd-test
   on:
     repo: Daniela-git/travis-ci-cd
-  skip_cleanup: "true"
-  run:
-    - "./gradlew run"
+  skip_cleanup: "false"
+  # run: "./gradlew run"
